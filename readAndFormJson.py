@@ -14,7 +14,7 @@ button = False
 
 # 新建一个空字典
 jsonData = {}
-dataLiat = []
+dataList = []
 jsonKeyList = []
 num_cols = 0
 num_rows = 0
@@ -49,14 +49,14 @@ for i in range(num_rows):
         jsonValue = table.cell_value(i, j)# 得到key对应的数据 value
         # print(jsonValue)
         new_item_for_dataList[jsonKey] = jsonValue
-    dataLiat.append(new_item_for_dataList)
+    dataList.append(new_item_for_dataList)
     print("new_item_to_append:", new_item_for_dataList)
 
-print("json报文data字段的value（列表形式）---------->>", dataLiat)
-jsonData['data'] = dataLiat
+print("json报文data字段的value（列表形式）---------->>", dataList)
+jsonData['data'] = dataList
 print("json报文对象------->> ", jsonData)
 
-jsonString = json.dumps(jsonData, sort_keys=False, indent=4, separators=(',',':'), ensure_ascii=False)
+jsonString = json.dumps(jsonData, sort_keys=False, indent=4, separators=(',', ':'), ensure_ascii=False)
 print("jsonString报文的字符串-------->>", jsonString)
 # 将jsondata字典(python数据对象） 格式化输出json字符串
 
