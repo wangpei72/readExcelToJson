@@ -89,7 +89,7 @@ class ExcelFileParser:
                 jsonKey = self.jsonKeyList[j]
                 jsonValue = table.cell_value(i, j)
 
-                new_item_with_type = kvt.KVData(jsonKey, jsonValue, RequestType.RequestType.isHeader)
+                new_item_with_type = kvt.KVData(jsonKey, jsonValue, RequestType.RequestType.isBody)
 
                 new_kvt_list_for_one_row.append(new_item_with_type)
                 new_item_str.append(new_item_with_type.to_str())
@@ -99,12 +99,12 @@ class ExcelFileParser:
             self.dataList_withType_str.append(new_item_str)
             self.dataList_withType.append(new_kvt_list_for_one_row)
 
-        return self.dataList_withType, self.dataList_withType_str
-
-    def make_up_http_req_from_kvt_list(self):
-        # TODO 这边建议写到pool init那里
+        return self.dataList_withType
 
 
 if __name__ == '__main__':
     example = ExcelFileParser("data1.xlsx")
+    # example2 = ExcelFileParser("header1.xlsx")
+    # print(example2.dataList_withType)
+    # print(example2.dataList_withType_str)
     print(example.dataList_withType_str)

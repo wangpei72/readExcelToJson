@@ -6,14 +6,12 @@ import RequestType
 class KVData:
     key = None
     value = None
-    type = RequestType.RequestType.isHeader
-    equal_dic = {}
+    type = RequestType.RequestType.isBody
 
     def __init__(self, k, v, t):
         self.key = k
         self.value = v
         self.type = t
-        self.equal_dic[k] = v
 
     def change_type(self, type_):
         self.type = type_

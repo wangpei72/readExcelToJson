@@ -5,7 +5,6 @@ import datetime
 from email.mime.text import MIMEText
 
 
-
 url = "http://yqtb.nwpu.edu.cn/wx/ry/ry_util.jsp"
 # headers = {
 #     'Content-Type': 'application/x-www-form-urlencoded',
